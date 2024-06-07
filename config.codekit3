@@ -25,14 +25,6 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
-    "\/404.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/404.php",
-      "oF" : 0
-    },
     "\/fonts\/cairoli-classic-condensed-light.woff2" : {
       "cB" : 0,
       "ft" : 8192,
@@ -344,21 +336,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/_footer.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 1,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 1,
-      "oA" : 1,
-      "oAP" : "\/sass\/_footer.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/sass\/_global.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -399,21 +376,6 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/sass\/_helpers.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/sass\/_lightbox.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 1,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 1,
-      "oA" : 1,
-      "oAP" : "\/sass\/_lightbox.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

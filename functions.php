@@ -37,14 +37,6 @@ add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
 add_filter('wp_lazy_loading_enabled', '__return_false');
 
-function katja_register_menus() {
-  register_nav_menus(
-    array(
-      'primary-menu' => __('Primary Menu')
-    )
-  );
-}
-add_action('init', 'katja_register_menus');
 
 add_action('init', 'katja_register_post_types', 9);
 function katja_register_post_types() {
@@ -75,108 +67,6 @@ function katja_remove_wp_block_library_css(){
   wp_dequeue_style('wp-block-library-theme');
 }
 add_action('wp_enqueue_scripts', 'katja_remove_wp_block_library_css', 100);
-
-
-
-function work_front_page( $query ) {
-
-    // Only filter the main query on the front-end
-    if ( is_admin() || ! $query->is_main_query() ) {
-      return;
-    }
-
-    global $wp;
-    $front = false;
-
-  // If the latest posts are showing on the home page
-    if ( ( is_home() || is_front_page() && empty( $wp->query_string ) ) ) {
-      $front = true;
-    }
-
-  // If a static page is set as the home page
-    if ( ( $query->get( 'page_id' ) == get_option( 'page_on_front' ) && get_option( 'page_on_front' ) ) || empty( $wp->query_string ) ) {
-      $front = true;
-    }
-
-    if ( $front ) :
-
-        $query->set( 'post_type', 'katja_work' );
-        $query->set( 'page_id', '' );
-
-        // Set properties to match an archive
-        $query->is_page = 0;
-        $query->is_singular = 0;
-        $query->is_post_type_archive = 1;
-        $query->is_archive = 1;
-
-    endif;
-
-}
-add_action('pre_get_posts', 'work_front_page');
-
-
-
-
-
-function add_katja_work_acf_columns($columns) {
-  return array_merge($columns, array(
-    'location' => __('Location'),
-    'year' => __('Year')
-  ));
-}
-add_filter('manage_katja_work_posts_columns', 'add_katja_work_acf_columns');
-
-function katja_work_custom_column($column, $post_id) {
-  switch($column) {
-    case 'location':
-      echo get_post_meta($post_id, 'location', true);
-      break;
-    case 'year':
-      echo get_post_meta($post_id, 'year', true);
-      break;
-  }
-}
-add_action('manage_katja_work_posts_custom_column', 'katja_work_custom_column', 10, 2);
-
-
-function add_katja_speculation_acf_columns($columns) {
-  return array_merge($columns, array(
-    'program' => __('Program'),
-    'speculation_date' => __('Date')
-  ));
-}
-add_filter('manage_katja_speculation_posts_columns', 'add_katja_speculation_acf_columns');
-
-function katja_speculation_custom_column($column, $post_id) {
-  switch($column) {
-    case 'program':
-      echo get_post_meta($post_id, 'program', true);
-      break;
-    case 'speculation_date':
-      echo get_post_meta($post_id, 'date', true);
-      break;
-  }
-}
-add_action('manage_katja_speculation_posts_custom_column', 'katja_speculation_custom_column', 10, 2);
-
-function katja_remove_date_column($columns) {
-  unset($columns['date']);
-  return $columns;
-}
-
-function katja_column_init() {
-  add_filter('manage_posts_columns', 'katja_remove_date_column');
-}
-add_action('admin_init', 'katja_column_init');
-
-add_action('admin_head', 'katja_column_widths');
-function katja_column_widths() {
-  global $post_type;
-  if ('katja_work' == $post_type || 'katja_speculation' == $post_type) {
-    ?><style type="text/css"> .column-location, .column-year, .column-course_number, .column-program, .column-speculation_date { width: 15%; } </style><?php
-  }
-}
-
 
 
 add_filter('intermediate_image_sizes_advanced', 'katja_remove_default_images');
@@ -280,39 +170,5 @@ add_filter('tiny_mce_before_init', 'katja_tinymce_paste_as_text');
 function katja_tinymce_paste_as_text( $init ) {
   $init['paste_as_text'] = true;
   return $init;
-}
-
-
-
-function get_top_work(){
-    global $post;
-    $tmp_post = $post;
-    $args = array(
-        'numberposts'     => 1,
-        'offset'          => 0,
-        'orderby'         => 'menu_order',
-        'order'           => 'ASC',
-        'post_type'       => 'katja_work',
-        'post_status'     => 'publish' );
-    $myposts = get_posts( $args );
-    $permalink = get_permalink($myposts[0]->ID);
-    $post = $tmp_post;
-    return $permalink;
-}
-
-function get_top_speculation(){
-    global $post;
-    $tmp_post = $post;
-    $args = array(
-        'numberposts'     => 1,
-        'offset'          => 0,
-        'orderby'         => 'menu_order',
-        'order'           => 'ASC',
-        'post_type'       => 'katja_speculation',
-        'post_status'     => 'publish' );
-    $myposts = get_posts( $args );
-    $permalink = get_permalink($myposts[0]->ID);
-    $post = $tmp_post;
-    return $permalink;
 }
 
