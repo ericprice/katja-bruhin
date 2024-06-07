@@ -1,0 +1,178 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  padding: var(--tab);
+  width: 20vw;
+  overflow-y: auto;
+
+  .video-active & {
+    color: $main-bg;
+
+    a,
+    button {
+      color: $main-bg;
+      
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  @include breakpoint($s) {
+    display: none;
+    width: auto;
+    right: 0;
+
+    .home &,
+    .category & {
+      display: block;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header-title {
+    margin-bottom: calc(var(--leading) * .667);
+  }
+
+  > * {
+    @media (hover: hover) {
+      .single-katja_projects & {
+        opacity: 0;
+      }
+    }
+  }
+
+  &:hover {
+    > * {
+      opacity: 1;
+    }
+  }
+
+  .page-template-page-about & {
+    .site-header-meta,
+    .site-header-nav-link {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .site-header-filter-container,
+    .projects {
+      display: none;
+    }
+  }
+
+  .site-header-meta,
+  .site-header-nav,
+  .site-header-filter-container {
+    font-family: 'Cairoli Classic Condensed', sans-serif;
+    margin-bottom: var(--tab);
+  }
+
+  .site-header-nav {
+    .site-header-nav-projects {
+      display: none;
+      margin-bottom: var(--leading);
+
+      .video-active & {
+        display: block;
+      }
+    }
+
+    .site-header-nav-about a {
+      display: inline-block;
+      background: $main-color;
+      @include hide-text;
+      width: calc(var(--leading) * .667);
+      height: calc(var(--leading) * .667);
+      border-radius: 100%;
+      margin-bottom: calc(var(--leading) * .333);
+
+      .video-active & {
+        background: $main-bg;
+      }
+
+      &:hover {
+        background: $accent;
+      }
+    }
+
+    .site-header-nav-link a {
+      display: inline-block;
+      line-height: 0;
+      border-radius: 100%;
+      border: 4px solid rgba($main-color, 0);
+      margin: -4px;
+
+      .video-active & {
+        display: none;
+      }
+
+      &:hover {
+        border-color: $main-color;
+      }
+
+      img {
+        width: 2.8rem;
+      }
+    }
+  }
+
+  .site-header-filter-container {
+    margin-bottom: calc(var(--tab) * 1.333);
+  }
+
+  .site-header-filter-toggle {
+    .filter-active &,
+    .category &,
+    .video-active & {
+      display: none;
+    }
+  }
+
+  .site-header-filter {
+    display: none;
+
+    .filter-active &,
+    .category & {
+      display: inline-block;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: calc(var(--tab) * .5);
+      white-space: nowrap;
+    }
+  }
+
+  .projects {
+    .video-active & {
+      display: none;
+    }
+
+    .project-thumb {
+      margin-bottom: .5rem;
+
+      a {
+        display: inline-block;
+        line-height: 0;
+        border: 4px solid rgba($main-color, 0);
+        margin: -4px;
+  
+        &:hover {
+          border-color: $main-color;
+        }
+      }
+
+      img {
+        max-height: 8rem;
+        max-width: 8rem;
+      }
+    }
+  }
+}

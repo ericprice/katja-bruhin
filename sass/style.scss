@@ -1,0 +1,16 @@
+/*!
+  Theme Name: Katja Bruhin
+  Author: Eric Price
+  Author URI: https://ericprice.info/
+  Version: 1.0
+*/
+
+@import 'reset';
+@import '../node_modules/breakpoint-sass/stylesheets/_breakpoint';
+@import 'helpers';
+@import 'fonts';
+@import 'global';
+@import 'header';
+@import 'footer';
+@import 'work';
+@import 'about';

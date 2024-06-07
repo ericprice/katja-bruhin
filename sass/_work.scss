@@ -1,0 +1,116 @@
+.project-detail {
+  .project-detail-back {
+    margin-bottom: calc(var(--leading) * 3);
+
+    @include breakpoint($m-up) {
+      display: none;
+    }
+  }
+
+  .project-detail-client {
+    text-transform: uppercase;
+    margin-bottom: calc(var(--leading) * 3);
+  }
+
+  .project-detail-header {
+    margin-bottom: calc(var(--leading) * 3);
+
+    @include breakpoint($l-up) {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $main-color;
+    }
+
+    .label {
+      font-family: 'Cairoli Classic Condensed', sans-serif;
+      padding-right: .15em;
+    }
+
+    .project-detail-header-item {
+      @include breakpoint($m-down) {
+        border-bottom: 1px solid $main-color;
+      }
+    }
+  }
+  
+  .project-detail-content {
+    margin-bottom: calc(var(--leading) * 3);
+
+    @include breakpoint($l-up) {
+      padding-right: calc(var(--leading) * 6);
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  gap: var(--tab);
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: calc(var(--leading) * 6);
+
+  .gallery-item {
+    line-height: 0;
+    grid-column: span 12;
+
+    @include breakpoint($m-up) {
+      &.three-quarters {
+        grid-column: span 9;
+      }
+
+      &.two-thirds {
+        grid-column: span 8;
+      }
+
+      &.half {
+        grid-column: span 6;
+      }
+
+      &.third {
+        grid-column: span 4;
+      }
+
+      &.quarter {
+        grid-column: span 3;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.project-detail-nav {
+  .project-detail-nav-item {
+    display: inline-block;
+    margin-right: calc(var(--tab) * .5);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    &.previous a {
+      padding-right: 4.5rem;
+      background: url('images/arrow-left.svg') right center no-repeat;
+      background-size: contain;
+
+      &:hover {
+        background-image: url('images/arrow-left-active.svg');
+      }
+    }
+
+    &.next a {
+      padding-left: 4.5rem;
+      background: url('images/arrow-right.svg') left center no-repeat;
+      background-size: contain;
+
+      &:hover {
+        background-image: url('images/arrow-right-active.svg');
+      }
+    }
+  }
+}

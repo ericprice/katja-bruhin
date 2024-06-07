@@ -1,0 +1,34 @@
+.site-footer {
+  display: grid;
+  gap: 0 var(--tab);
+  grid-template-columns: repeat(6, 1fr);
+  
+  .single &,
+  .about-with-sidebar & {
+    display: none;
+  }
+  
+  .site-footer-update {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    font-size: .875rem;
+    line-height: var(--leading);
+    font-style: italic;
+    
+    @include breakpoint($m-up) {
+      grid-column-start: 2;
+      grid-column-end: 6;
+      font-size: .75rem;
+      line-height: var(--leading);
+    }
+    
+    .site-footer-heading {
+      font-variant-caps: all-small-caps;
+      letter-spacing: 0;
+    }
+    
+    .site-footer-text {
+      margin-bottom: 0;
+    }
+  }
+}

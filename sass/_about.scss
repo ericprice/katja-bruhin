@@ -1,0 +1,24 @@
+.page {
+  .page-title,
+  .page-back,
+  .page-subtitle,
+  .page-content {
+    margin-bottom: calc(var(--leading) * 3);
+  }
+
+  .page-back {
+    @include breakpoint($m-up) {
+      display: none;
+    }
+  }
+
+  .page-subtitle {
+    border-bottom: 1px solid $main-color;
+  }
+
+  .page-content {
+    @include breakpoint($l-up) {
+      padding-right: calc(var(--leading) * 6);
+    }
+  }
+}
