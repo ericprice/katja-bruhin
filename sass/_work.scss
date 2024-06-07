@@ -112,5 +112,14 @@
         background-image: url('images/arrow-right-active.svg');
       }
     }
+
+    @include breakpoint($s) {
+      &.previous a,
+      &.next a {
+        padding: 0;
+        @include hide-text;
+        width: 3.6rem;
+      }
+    }
   }
 }
