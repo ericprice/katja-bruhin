@@ -9,7 +9,7 @@ $xl: min-width 1300px;
 
 $main-color: #000;
 $main-bg: #fff;
-$accent: #f00;
+$accent: #9a9a9a;
 
 :root {
   --viewport-height: 100%;
@@ -62,11 +62,6 @@ body {
 #main {
   @include breakpoint($m-up) {
     padding-left: 20vw;
-  }
-
-  .loading & {
-    opacity: 0;
-    pointer-events: none;
   }
 }
 
@@ -230,12 +225,7 @@ textarea {
   height: 100%;
   z-index: 10;
   overflow: hidden;
-  display: none;
   background: $main-color;
-
-  .video-active & {
-    display: block;
-  }
 }
 
 .overlay-content {

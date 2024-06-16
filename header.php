@@ -16,8 +16,7 @@
       </ul>
       <nav class="site-header-nav">
         <ul>
-          <li class="site-header-nav-projects"><button>Projects</button></li>
-          <li class="site-header-nav-about"><a href="/about/">About</a></li>
+          <li class="site-header-nav-projects"><a href="/projects/">Projects</a></li>
           <li class="site-header-nav-link"><a href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/link.png"></a></li>
         </ul>
       </nav>
@@ -25,7 +24,7 @@
         <button class="site-header-filter-toggle">Filter</button>
         <nav class="site-header-filter">
           <?php if (is_archive() && !is_home()): ?>
-            <a class="clear-filter" data-turbolinks="false" href="/"><?php the_archive_title(); ?> <span class="close regular">&nbsp;x</span></a>
+            <a class="clear-filter" data-turbolinks="false" href="/projects/"><?php the_archive_title(); ?> <span class="close regular">&nbsp;x</span></a>
           <?php else: ?>
             <ul>
               <?php

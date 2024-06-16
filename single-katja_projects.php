@@ -12,7 +12,7 @@
   </style>
   <article class="project-detail" data-post-id="<?php echo get_the_ID(); ?>">
     <div class="content">
-      <div class="project-detail-back"><a href="<?php echo home_url(); ?>">Back</a></div>
+      <div class="project-detail-back"><a href="/projects/">Back</a></div>
       <h3 class="project-detail-client"><?php the_field('client'); ?></h3>
       <header class="project-detail-header">
         <h2 class="project-detail-header-item project-detail-header-title"><span class="label">Project</span> <?php the_title(); ?></h2>

@@ -25,6 +25,22 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
+    "\/archive-katja_projects.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/archive-katja_projects.php",
+      "oF" : 0
+    },
+    "\/category.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/category.php",
+      "oF" : 0
+    },
     "\/fonts\/cairoli-classic-condensed-light.woff2" : {
       "cB" : 0,
       "ft" : 8192,
@@ -138,14 +154,6 @@
       "ou" : "lpckwebp-none",
       "q" : 90,
       "rq" : 75
-    },
-    "\/index.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/index.php",
-      "oF" : 0
     },
     "\/js\/katjabruhin.js" : {
       "bF" : 0,

@@ -6,8 +6,15 @@ var hasTouch = function() {
 }
 
 var backNav = function() {
-  $('.site-header-title a, .site-header-nav-about a').click(function(e) {
+  $('.site-header-title a').click(function(e) {
     if ($('body').hasClass('page')) {
+      e.preventDefault();
+      Turbolinks.visit('/projects/');
+    }
+  });
+
+  $('.site-header-nav-projects a').click(function(e) {
+    if ($('body').hasClass('post-type-archive-katja_projects')) {
       e.preventDefault();
       Turbolinks.visit('/');
     }
@@ -35,23 +42,10 @@ var projectFilter = function() {
   });
 }
 
-var videoControl = function() {
-  if (sessionStorage.getItem('videoActivated') !== 'true' && $('body').hasClass('home')) {
-    $('body').addClass('video-active');
-  }
-  sessionStorage.setItem('videoActivated', 'true');
-
-  $('.video-active button, .video-active a').click(function() {
-    $('body').removeClass('video-active');
-    $('.overlay').remove();
-  });
-}
-
 document.addEventListener('turbolinks:load', function() {
   $('html').removeClass('loading');
   backNav();
   projectFilter();
-  videoControl();
 
   if (!hasTouch()) {
     projectPreview();
