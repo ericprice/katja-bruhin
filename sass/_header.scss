@@ -75,6 +75,10 @@
     margin-bottom: var(--tab);
   }
 
+  .home & .site-header-filter-container {
+    display: none;
+  }
+
   .site-header-nav {
     .site-header-nav-projects a {
       display: inline-block;

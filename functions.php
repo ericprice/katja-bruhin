@@ -7,7 +7,7 @@ add_action('after_setup_theme', function() {
 });
 
 function katja_assets() {
-  $katja_version = '0.9';
+  $katja_version = '0.12';
   if (!is_admin()) {
     wp_deregister_script('wp-embed');
   }

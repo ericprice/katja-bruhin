@@ -23,7 +23,7 @@
       <div class="site-header-filter-container">
         <button class="site-header-filter-toggle">Filter</button>
         <nav class="site-header-filter">
-          <?php if (is_archive() && !is_home()): ?>
+          <?php if (is_category()): ?>
             <a class="clear-filter" data-turbolinks="false" href="/projects/"><?php the_archive_title(); ?> <span class="close regular">&nbsp;x</span></a>
           <?php else: ?>
             <ul>
@@ -39,7 +39,7 @@
         </nav>
       </div>
       <?php
-        if (is_archive() && !is_home()) {
+        if (is_category() && !is_home()) {
           $term = get_queried_object();
           $args = array(
             'category_name' => $term->slug,

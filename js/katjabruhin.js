@@ -14,8 +14,9 @@ var backNav = function() {
   });
 
   $('.site-header-nav-projects a').click(function(e) {
-    if ($('body').hasClass('post-type-archive-katja_projects')) {
+    if ($('body').hasClass('post-type-archive-katja_projects') || $('body').hasClass('category')) {
       e.preventDefault();
+      $('html').removeClass('filter-active');
       Turbolinks.visit('/');
     }
   });
