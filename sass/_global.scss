@@ -197,6 +197,12 @@ textarea {
 }
 
 .projects-preview {
+  position: fixed;
+  top: var(--tab);
+  right: var(--tab);
+  bottom: var(--tab);
+  width: 80vw;
+
   .project-preview {
     display: none;
 
@@ -236,4 +242,12 @@ textarea {
   height: 100%;
   object-fit: cover;
   transform: translate(-50%, -50%);
+}
+
+.post {
+  margin-bottom: calc(var(--leading) * 9);
+
+  .post-title {
+    text-transform: uppercase;
+  }
 }

@@ -92,8 +92,8 @@ $my_image_sizes = [
   ],
   [
     'name' => 'katja_l',
-    'width' => 1600,
-    'height' => 1600,
+    'width' => 2000,
+    'height' => 2000,
     'crop' => false,
   ],
 ];
@@ -122,7 +122,7 @@ function my_add_image_sizes($sizes) {
 if (function_exists('set_image_size_quality')) {
   set_image_size_quality('katja_s', 70);
   set_image_size_quality('katja_m', 75);
-  set_image_size_quality('katja_l', 80);
+  set_image_size_quality('katja_l', 90);
 }
 
 add_filter('wp_calculate_image_srcset', '__return_false');
@@ -134,7 +134,6 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 
 add_action('admin_menu', 'katja_remove_admin_menus');
 function katja_remove_admin_menus() {
-  remove_menu_page('edit.php');
   remove_menu_page('edit-comments.php');
 }
 add_action('init', 'remove_comment_support', 100);

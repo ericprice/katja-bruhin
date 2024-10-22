@@ -55,7 +55,9 @@
     }
   }
 
-  .page-template-page-about & {
+  .page-template-page-about &,
+  .blog &,
+  .single-post & {
     .site-header-meta,
     .site-header-nav-link {
       opacity: 0;
@@ -77,6 +79,11 @@
 
   .home & .site-header-filter-container {
     display: none;
+  }
+
+  .post-type-archive-katja_projects &,
+  .archive.category & {
+    width: 100vw;
   }
 
   .site-header-nav {

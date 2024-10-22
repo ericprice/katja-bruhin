@@ -17,7 +17,7 @@
       <nav class="site-header-nav">
         <ul>
           <li class="site-header-nav-projects"><a href="/projects/">Projects</a></li>
-          <li class="site-header-nav-link"><a href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/link.png"></a></li>
+          <li class="site-header-nav-link"><a href="/posts/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/link.png"></a></li>
         </ul>
       </nav>
       <div class="site-header-filter-container">
